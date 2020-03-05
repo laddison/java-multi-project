@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- 基本信息 -->
+    <name>demos</name>
+    <description>Demo project for Spring Boot</description>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <!-- 项目说明：这里作为聚合工程的父工程 -->
+    <groupId>cn.onbe.demos</groupId>
+    <artifactId>demos</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <!-- 模块说明：这里声明多个子模块 -->
+    <modules>
+        <module>demos-web</module>
+        <module>demos-service</module>
+        <module>demos-repo</module>
+        <module>demos-entity</module>
+    </modules>
+
+    <!-- 继承说明：这里继承SpringBoot提供的父工程 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!-- 项目属性 -->
+    <properties>
+        <java.version>1.8</java.version>
+        <demos.version>0.0.1-SNAPSHOT</demos.version>
+    </properties>
+
+    <!-- 版本说明：这里统一管理依赖的版本号 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.onbe.demos</groupId>
+                <artifactId>demos-web</artifactId>
+                <version>${demos.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.onbe.demos</groupId>
+                <artifactId>demos-service</artifactId>
+                <version>${demos.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.onbe.demos</groupId>
+                <artifactId>demos-repo</artifactId>
+                <version>${demos.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.onbe.demos</groupId>
+                <artifactId>demos-entity</artifactId>
+                <version>${demos.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
