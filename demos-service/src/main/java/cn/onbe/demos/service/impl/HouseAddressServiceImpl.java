@@ -6,6 +6,8 @@ import cn.onbe.demos.service.HouseAddressService;
 import cn.onbe.demos.utiles.ExcelUtiles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
@@ -32,6 +34,17 @@ public class HouseAddressServiceImpl implements HouseAddressService {
             for (HouseAddressEntity item : list) {
                 houseAddressRepository.save(item);
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void exportDataToExcel(HttpServletResponse response) {
+        List<HouseAddressEntity> list = houseAddressRepository.findAll();
+        try {
+            ExcelUtiles.exportExcel(list, "小区地址表", "小区表", HouseAddressEntity.class, "小区地址表3", response);
         } catch (IOException e) {
             e.printStackTrace();
         }
