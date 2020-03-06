@@ -14,4 +14,5 @@ public interface UserService {
       * @return List 用户列表
       */
      List<UserEntity> list();
+
 }

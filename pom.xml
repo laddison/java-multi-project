@@ -19,6 +19,7 @@
         <module>demos-service</module>
         <module>demos-repo</module>
         <module>demos-entity</module>
+        <module>demos-utiles</module>
     </modules>
 
     <!-- 继承说明：这里继承SpringBoot提供的父工程 -->
@@ -59,6 +60,12 @@
             <dependency>
                 <groupId>cn.onbe.demos</groupId>
                 <artifactId>demos-entity</artifactId>
+                <version>${demos.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.onbe.demos</groupId>
+                <artifactId>demos-utiles</artifactId>
                 <version>${demos.version}</version>
             </dependency>
 

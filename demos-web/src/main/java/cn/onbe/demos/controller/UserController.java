@@ -1,12 +1,12 @@
 package cn.onbe.demos.controller;
 
 import cn.onbe.demos.entity.UserEntity;
+import cn.onbe.demos.service.HouseAddressService;
 import cn.onbe.demos.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 
 /**
@@ -18,6 +18,12 @@ import java.util.List;
 public class UserController {
 
     private UserService userService;
+    private HouseAddressService houseAddressService;
+
+    @Autowired
+    public void setHouseAddressService(HouseAddressService houseAddressService) {
+        this.houseAddressService = houseAddressService;
+    }
 
     @Autowired
     public void setUserService(UserService userService) {
@@ -34,4 +40,13 @@ public class UserController {
 
         return "";
     }
+
+    @GetMapping("excel")
+    public String excel() {
+        houseAddressService.importDataFromExcel();
+
+        return "success";
+    }
+
+
 }

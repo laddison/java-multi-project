@@ -8,22 +8,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>demos-entity</artifactId>
 
-    <!-- Entity模块相关依赖 -->
+    <artifactId>demos-utiles</artifactId>
+
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-
         <!--easypoi excel操作-->
         <dependency>
             <groupId>cn.afterturn</groupId>
@@ -41,5 +29,13 @@
             <version>3.2.0</version>
         </dependency>
 
+        <!-- 文件上传 -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+
     </dependencies>
+
 </project>

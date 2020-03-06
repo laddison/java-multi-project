@@ -28,5 +28,10 @@
             <groupId>cn.onbe.demos</groupId>
             <artifactId>demos-entity</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>cn.onbe.demos</groupId>
+            <artifactId>demos-utiles</artifactId>
+        </dependency>
     </dependencies>
 </project>

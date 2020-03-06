@@ -10,7 +10,6 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>cn.onbe.demos</groupId>
     <artifactId>demos-service</artifactId>
 
     <dependencies>
@@ -21,8 +20,14 @@
 
         <dependency>
             <groupId>cn.onbe.demos</groupId>
+            <artifactId>demos-utiles</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.onbe.demos</groupId>
             <artifactId>demos-repo</artifactId>
         </dependency>
+
     </dependencies>
 
 </project>
