@@ -2,38 +2,34 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
         <artifactId>demos</artifactId>
         <groupId>cn.onbe.demos</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>demos-service</artifactId>
+
+    <artifactId>demos-configs</artifactId>
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>5.2.2.RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>cn.onbe.demos</groupId>
-            <artifactId>demos-entity</artifactId>
+            <artifactId>demos-service</artifactId>
         </dependency>
 
         <dependency>
             <groupId>cn.onbe.demos</groupId>
             <artifactId>demos-utiles</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>cn.onbe.demos</groupId>
-            <artifactId>demos-repo</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.6</version>
-        </dependency>
-
     </dependencies>
 
 </project>

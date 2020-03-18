@@ -20,13 +20,15 @@
         <module>demos-repo</module>
         <module>demos-entity</module>
         <module>demos-utiles</module>
+
+        <module>demos-configs</module>
     </modules>
 
     <!-- 继承说明：这里继承SpringBoot提供的父工程 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.5.RELEASE</version>
+        <version>2.2.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -48,6 +50,12 @@
             <dependency>
                 <groupId>cn.onbe.demos</groupId>
                 <artifactId>demos-service</artifactId>
+                <version>${demos.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.onbe.demos</groupId>
+                <artifactId>demos-configs</artifactId>
                 <version>${demos.version}</version>
             </dependency>
 

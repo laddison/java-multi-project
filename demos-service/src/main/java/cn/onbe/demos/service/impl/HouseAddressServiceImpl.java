@@ -4,15 +4,19 @@ import cn.onbe.demos.entity.HouseAddressEntity;
 import cn.onbe.demos.repository.HouseAddressRepository;
 import cn.onbe.demos.service.HouseAddressService;
 import cn.onbe.demos.utiles.ExcelUtiles;
+import cn.onbe.demos.utiles.JsonUtiles;
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
 /**
  * 小区地址实现
+ *
  * @author LiQiuShui
  */
 @Service
@@ -48,6 +52,20 @@ public class HouseAddressServiceImpl implements HouseAddressService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void exportDataToJsonFile() {
+        String filePath = "/usr/local/www/demos/upload/data.json";
+        File file = new File(filePath);
+        List<HouseAddressEntity> list = houseAddressRepository.findAll();
+        String jsonString = JsonUtiles.list2Json(list);
+        try {
+            FileUtils.write(file, jsonString, "UTF-8", false);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(jsonString);
 
     }
 }

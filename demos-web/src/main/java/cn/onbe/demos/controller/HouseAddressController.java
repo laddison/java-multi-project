@@ -1,15 +1,11 @@
 package cn.onbe.demos.controller;
 
-import cn.onbe.demos.entity.UserEntity;
 import cn.onbe.demos.service.HouseAddressService;
-import cn.onbe.demos.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  * 用户控制器
@@ -17,30 +13,17 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class HouseAddressController {
 
-    private UserService userService;
     private HouseAddressService houseAddressService;
 
     @Autowired
     public void setHouseAddressService(HouseAddressService houseAddressService) {
         this.houseAddressService = houseAddressService;
     }
-
-    @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }
-
-    @GetMapping("list")
-    public String list() {
-        List<UserEntity> list = userService.list();
-
-        for (UserEntity user : list) {
-            System.out.println(user.getMobile());
-        }
-
-        return "";
+    @GetMapping("/hi")
+    public String hi() {
+        return "hello,world";
     }
 
     @GetMapping("excel")
@@ -55,4 +38,11 @@ public class UserController {
         houseAddressService.exportDataToExcel(response);
         return "success~!";
     }
+
+    @GetMapping("download_json")
+    public String downloadJsonFile() {
+        houseAddressService.exportDataToJsonFile();
+        return "success!~";
+    }
+
 }

@@ -1,27 +1,30 @@
 package cn.onbe.demos.entity;
 
-import lombok.Data;
-
 import javax.persistence.*;
+import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
- * 用户entity
+ * security 用户模型
  * @author LiQiuShui
  */
 @Entity
+@Setter
+@Getter
 @Table(name = "user")
-@Data
-public class UserEntity {
+public class UserEntity implements Serializable {
+    private static final long serialVersionUID = -176827308280438372L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
 
-    @Column(name = "mobile")
-    private long mobile;
+    @Column
+    private String username;
 
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "create_time")
-    private long create_time;
+    @Column
+    @JsonIgnore
+    private String password;
 }
