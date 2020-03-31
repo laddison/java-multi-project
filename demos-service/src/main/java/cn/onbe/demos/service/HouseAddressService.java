@@ -1,6 +1,9 @@
 package cn.onbe.demos.service;
 
+import cn.onbe.demos.entity.HouseAddressEntity;
+
 import javax.servlet.http.HttpServletResponse;
+import java.util.Optional;
 
 /**
  * 小区地址excel读写操作
@@ -23,4 +26,11 @@ public interface HouseAddressService {
      * 导出数据到json文件
      */
     void exportDataToJsonFile();
+
+    /**
+     * 通过id获取单个数据
+     * @param id id
+     * @return option
+     */
+    HouseAddressEntity getById(Integer id);
 }

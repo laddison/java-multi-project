@@ -47,10 +47,6 @@
             <groupId>cn.onbe.demos</groupId>
             <artifactId>demos-configs</artifactId>
         </dependency>
-        <dependency>
-            <groupId>cn.onbe.demos</groupId>
-            <artifactId>demos-config</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>cn.onbe.demos</groupId>

@@ -3,6 +3,8 @@
 * 使用 easypoi 进行excel的导入和导出操作
 * Spring Boot Security + JWT Hello World Example(https://www.javainuse.com/spring/boot-jwt)
 jwt(JSON Web Token)
+* 数据库导入成json文件
+* redis缓存,redis数据存储工具
 ## Idea快捷键
 
 ### 编辑

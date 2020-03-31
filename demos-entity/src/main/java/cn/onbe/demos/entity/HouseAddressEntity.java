@@ -23,11 +23,11 @@ public class HouseAddressEntity implements Serializable {
 
     @Excel(name = "物业名")
     @Column(name = "house_name")
-    private String house_name;
+    private String houseName;
 
     @Excel(name = "区域")
-    @Column(name = "area_name")
-    private String area_name;
+    @Column(name = "area_id")
+    private String areaId;
 
     @Excel(name = "地址")
     @Column(name = "address")
